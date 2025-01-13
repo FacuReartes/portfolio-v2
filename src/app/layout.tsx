@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "@mui/material";
+import theme from "@/theme/theme";
 
 export const metadata: Metadata = {
   title: "Facundo Reartes",
@@ -12,10 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
+    <ThemeProvider theme={theme}>
+      <html lang="en">
+        <body>
+          {children}
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }

@@ -1,4 +1,5 @@
 import Experience from '@/components/Experience';
+import Project from '@/components/Project';
 import Sidebar from '@/components/Sidebar';
 import { Box, Typography } from '@mui/material';
 
@@ -20,10 +21,11 @@ export default function Home() {
         justifyContent: 'center',
         gap: 10,
         bgcolor: 'secondary.main',
+        height: '100vh'
       }}
     >
       <Sidebar />
-      <Box sx={{ bgcolor: 'primary.main', width: '900px', px: '40px', pt: 4 }}>
+      <Box sx={{ bgcolor: 'primary.main', width: '900px', px: '40px', pt: 4, overflowY: 'auto', height: '85vh' }}>
         <Typography
           variant="h4"
           component="h3"
@@ -38,7 +40,7 @@ export default function Home() {
           eaque sint dolorem magnam! Lorem ipsum dolor sit amet consectetur
           adipisicing elit. Aliquam vel eum cumque perferendis quasi pariatur
           repellat, quis mollitia! Veritatis incidunt, totam asperiores facere
-          similique ipsam? Vitae eaque sint dolorem magnam!{' '}
+          similique ipsam? Vitae eaque sint dolorem magnam!
         </Typography>
         <Typography sx={{ color: 'common.white' }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vel
@@ -61,6 +63,27 @@ export default function Home() {
           description={experiences[0].description}
           date={experiences[0].date}
         />
+        <Experience
+          title={experiences[0].title}
+          description={experiences[0].description}
+          date={experiences[0].date}
+        />
+        <Typography
+          variant="h4"
+          component="h3"
+          sx={{ color: 'common.white', pb: 1, pt: 2 }}
+        >
+          Projects
+        </Typography>
+        <Project/>
+        <Project/>
+        <Typography
+          variant="h4"
+          component="h3"
+          sx={{ color: 'common.white', pb: 1, pt: 2 }}
+        >
+          Education
+        </Typography>
         <Experience
           title={experiences[0].title}
           description={experiences[0].description}

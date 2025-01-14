@@ -1,9 +1,9 @@
-'use client'
+'use client';
 import { createTheme } from '@mui/material';
 
 const theme = createTheme({
   //typography: {
-   // fontFamily: 'var(--outfit)',
+  // fontFamily: 'var(--outfit)',
   //},
   palette: {
     primary: {

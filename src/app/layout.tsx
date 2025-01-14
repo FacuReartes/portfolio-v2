@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { ThemeProvider } from "@mui/material";
-import theme from "@/theme/theme";
+import type { Metadata } from 'next';
+import './globals.css';
+import { ThemeProvider } from '@mui/material';
+import theme from '@/theme/theme';
 
 export const metadata: Metadata = {
-  title: "Facundo Reartes",
-  description: "Facundo Reartes personal portfolio",
+  title: 'Facundo Reartes',
+  description: 'Facundo Reartes personal portfolio',
 };
 
 export default function RootLayout({
@@ -16,9 +16,7 @@ export default function RootLayout({
   return (
     <ThemeProvider theme={theme}>
       <html lang="en">
-        <body>
-          {children}
-        </body>
+        <body>{children}</body>
       </html>
     </ThemeProvider>
   );

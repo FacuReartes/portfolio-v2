@@ -5,7 +5,8 @@ import { Box, Typography } from '@mui/material';
 
 const experiences = [
   {
-    title: 'Software developer, Workplace',
+    title: 'Software developer',
+    workplace: 'Workplace',
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptates quia officia adipisci facere aperiam illo ea libero cum obcaecati consectetur vel iure amet dolorem modi, harum saepe perferendis expedita!',
     date: '24 Jan - Present',
@@ -17,23 +18,19 @@ export default function Home() {
     <Box
       sx={{
         display: 'flex',
-        py: 10,
         justifyContent: 'center',
         gap: 10,
+        py: 7,
         bgcolor: 'secondary.main',
-        height: '100vh'
+        color: 'common.white',
       }}
     >
       <Sidebar />
-      <Box sx={{ bgcolor: 'primary.main', width: '900px', px: '40px', pt: 4, overflowY: 'auto', height: '85vh' }}>
-        <Typography
-          variant="h4"
-          component="h3"
-          sx={{ color: 'common.white', pb: 1 }}
-        >
+      <Box sx={{ width: '900px', px: '40px', pt: 4 }}>
+        <Typography variant="h4" component="h3" sx={{ pb: 1 }} id="about">
           About
         </Typography>
-        <Typography sx={{ color: 'common.white', pb: 1 }}>
+        <Typography sx={{ pb: 1 }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vel
           eum cumque perferendis quasi pariatur repellat, quis mollitia!
           Veritatis incidunt, totam asperiores facere similique ipsam? Vitae
@@ -42,7 +39,7 @@ export default function Home() {
           repellat, quis mollitia! Veritatis incidunt, totam asperiores facere
           similique ipsam? Vitae eaque sint dolorem magnam!
         </Typography>
-        <Typography sx={{ color: 'common.white' }}>
+        <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vel
           eum cumque perferendis quasi pariatur repellat, quis mollitia!
           Veritatis incidunt, totam asperiores facere similique ipsam? Vitae
@@ -54,7 +51,8 @@ export default function Home() {
         <Typography
           variant="h4"
           component="h3"
-          sx={{ color: 'common.white', pb: 1, pt: 4 }}
+          sx={{ pb: 2, pt: 6 }}
+          id="experience"
         >
           Experience
         </Typography>
@@ -62,25 +60,29 @@ export default function Home() {
           title={experiences[0].title}
           description={experiences[0].description}
           date={experiences[0].date}
+          workplace={experiences[0].workplace}
         />
         <Experience
           title={experiences[0].title}
           description={experiences[0].description}
           date={experiences[0].date}
+          workplace={experiences[0].workplace}
         />
         <Typography
           variant="h4"
           component="h3"
-          sx={{ color: 'common.white', pb: 1, pt: 2 }}
+          sx={{ pb: 2, pt: 2 }}
+          id="projects"
         >
           Projects
         </Typography>
-        <Project/>
-        <Project/>
+        <Project />
+        <Project />
         <Typography
           variant="h4"
           component="h3"
-          sx={{ color: 'common.white', pb: 1, pt: 2 }}
+          sx={{ pb: 1, pt: 2 }}
+          id="education"
         >
           Education
         </Typography>
@@ -88,6 +90,7 @@ export default function Home() {
           title={experiences[0].title}
           description={experiences[0].description}
           date={experiences[0].date}
+          workplace={experiences[0].workplace}
         />
       </Box>
     </Box>

@@ -41,7 +41,12 @@ const Sidebar = () => {
       </Typography>
       <Divider sx={{ borderColor: 'common.white', pt: 2 }} />
       <List>
-        <ListItemButton href="#about">About</ListItemButton>
+        <ListItemButton
+          href="#about"
+          sx={{ color: 'primary.main', fontWeight: 'bold' }}
+        >
+          About
+        </ListItemButton>
         <ListItemButton href="#experience">Experience</ListItemButton>
         <ListItemButton href="#projects">Projects</ListItemButton>
         <ListItemButton href="#education">Education</ListItemButton>
@@ -50,7 +55,7 @@ const Sidebar = () => {
       <List>
         <ListItem>
           <ListItemIcon
-            sx={{ color: 'common.white', minWidth: 'unset', mr: 2 }}
+            sx={{ color: 'primary.main', minWidth: 'unset', mr: 2 }}
           >
             <Place />
           </ListItemIcon>
@@ -58,7 +63,7 @@ const Sidebar = () => {
         </ListItem>
         <ListItem>
           <ListItemIcon
-            sx={{ color: 'common.white', minWidth: 'unset', mr: 2 }}
+            sx={{ color: 'primary.main', minWidth: 'unset', mr: 2 }}
           >
             <Mail />
           </ListItemIcon>

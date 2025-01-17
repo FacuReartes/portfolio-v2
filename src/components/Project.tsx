@@ -1,4 +1,4 @@
-import { ArrowOutward, GitHub } from '@mui/icons-material';
+import { ArrowOutward, GitHub, Visibility } from '@mui/icons-material';
 import { Box, Button, Icon, IconButton, Typography } from '@mui/material';
 import Image from 'next/image';
 import React, { FC } from 'react';
@@ -14,20 +14,58 @@ interface IProject {
 const Project: FC<IProject> = (props) => {
   return (
     <Box sx={{ display: 'flex', gap: 4, pb: 4 }}>
-      <Box
+      <Button
         sx={{
+          p: 0,
+          lineHeight: 'unset',
           flexShrink: 0,
           width: '250px',
           height: '130px',
           border: 2,
+          bgcolor: 'primary.main',
           borderColor: 'secondary.main',
-          borderRadius: '10px',
+          borderRadius: '5px',
           position: 'relative',
           overflow: 'hidden',
+          transition: 'all 0.2s linear',
+          ':hover .projectOverlayIcon': {
+            opacity: 1,
+          },
+          ':hover': {
+            cursor: 'pointer',
+            borderColor: 'common.white',
+          },
+          ':hover .projectImage': {
+            transform: 'scale(1.1)',
+            opacity: 0.8,
+          },
         }}
+        href={props.liveLink}
+        target="_blank"
       >
-        <Image src={props.imgSrc} alt="project image" fill />
-      </Box>
+        <Image
+          className="projectImage"
+          src={props.imgSrc}
+          alt="project image"
+          fill
+          style={{ transition: 'inherit' }}
+        />
+        <Icon
+          className="projectOverlayIcon"
+          sx={{
+            zIndex: 99,
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            color: 'primary.main',
+            opacity: 0,
+            transition: 'inherit',
+          }}
+        >
+          <Visibility />
+        </Icon>
+      </Button>
       <Box>
         <Box
           sx={{
@@ -36,20 +74,30 @@ const Project: FC<IProject> = (props) => {
             alignItems: 'center',
           }}
         >
-          <Typography variant="h6" component="h4">
+          <Typography
+            variant="h6"
+            component="h4"
+            sx={{ color: 'primary.main' }}
+          >
             {props.title}
           </Typography>
           <Box>
-            <Button sx={{
-              color: 'common.white',
-              minWidth: 'unset',
-              ':hover': { color: 'primary.main', bgcolor: 'unset' },
-              transition: 'all 0.2s linear',
-              position: 'relative'
-            }}
-              href={props.githubLink}
-              target='_blank'>
-              Live <ArrowOutward sx={{ fontSize: 14, top: -5, position: 'relative' }}/>
+            <Button
+              sx={{
+                color: 'common.white',
+                minWidth: 'unset',
+                ':hover': { color: 'primary.main', bgcolor: 'unset' },
+                transition: 'all 0.2s linear',
+                position: 'relative',
+                paddingRight: 0,
+              }}
+              href={props.liveLink}
+              target="_blank"
+            >
+              Live{' '}
+              <ArrowOutward
+                sx={{ fontSize: 14, top: -5, position: 'relative' }}
+              />
             </Button>
             <IconButton
               sx={{
@@ -60,15 +108,13 @@ const Project: FC<IProject> = (props) => {
                 transition: 'all 0.2s linear',
               }}
               href={props.githubLink}
-              target='_blank'
+              target="_blank"
             >
               <GitHub />
             </IconButton>
           </Box>
         </Box>
-        <Typography>
-          {props.description}
-        </Typography>
+        <Typography>{props.description}</Typography>
       </Box>
     </Box>
   );

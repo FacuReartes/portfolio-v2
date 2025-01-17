@@ -16,7 +16,7 @@ const Experience: FC<IExperience> = (props) => {
           <Typography
             component="span"
             variant="h5"
-            sx={{ color: 'common.white' }}
+            sx={{ color: 'primary.main' }}
           >
             {props.title}
           </Typography>
@@ -24,7 +24,6 @@ const Experience: FC<IExperience> = (props) => {
           <Typography
             component="span"
             variant="h5"
-            sx={{ color: 'primary.main' }}
           >
             {props.workplace}
           </Typography>

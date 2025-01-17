@@ -1,8 +1,15 @@
-import { Box, Typography } from '@mui/material';
+import { ArrowOutward, GitHub } from '@mui/icons-material';
+import { Box, Button, Icon, IconButton, Typography } from '@mui/material';
 import Image from 'next/image';
 import React, { FC } from 'react';
 
-interface IProject {}
+interface IProject {
+  title: string;
+  description: string;
+  liveLink: string;
+  githubLink: string;
+  imgSrc: string;
+}
 
 const Project: FC<IProject> = (props) => {
   return (
@@ -19,16 +26,48 @@ const Project: FC<IProject> = (props) => {
           overflow: 'hidden',
         }}
       >
-        <Image src="/project.png" alt="project image" fill />
+        <Image src={props.imgSrc} alt="project image" fill />
       </Box>
       <Box>
-        <Typography variant="h6" component="h4">
-          Project Title
-        </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <Typography variant="h6" component="h4">
+            {props.title}
+          </Typography>
+          <Box>
+            <Button sx={{
+              color: 'common.white',
+              minWidth: 'unset',
+              ':hover': { color: 'primary.main', bgcolor: 'unset' },
+              transition: 'all 0.2s linear',
+              position: 'relative'
+            }}
+              href={props.githubLink}
+              target='_blank'>
+              Live <ArrowOutward sx={{ fontSize: 14, top: -5, position: 'relative' }}/>
+            </Button>
+            <IconButton
+              sx={{
+                color: 'common.white',
+                py: 1,
+                mr: 4,
+                ':hover': { color: 'primary.main' },
+                transition: 'all 0.2s linear',
+              }}
+              href={props.githubLink}
+              target='_blank'
+            >
+              <GitHub />
+            </IconButton>
+          </Box>
+        </Box>
         <Typography>
-          Project description Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Deserunt porro dolores sapiente nulla dignissimos? Placeat eius
-          quibusdam inventore vero nihil nisi ducimus aliast.
+          {props.description}
         </Typography>
       </Box>
     </Box>

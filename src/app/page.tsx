@@ -11,6 +11,24 @@ const experiences = [
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptates quia officia adipisci facere aperiam illo ea libero cum obcaecati consectetur vel iure amet dolorem modi, harum saepe perferendis expedita!',
     date: '24 Jan - Present',
   },
+  {
+    title: 'Ingeniería en Sistemas de Información',
+    workplace: 'UTN',
+    description:
+      'Currently pursuing a degree in Software Systems Engineering in Universidad Tecnológica Nacional at Córdoba, Argentina. Where I deepen my understanding in software development, refine my problem-solving skills and learn engineering principles',
+    date: 'Apr 2021 - Present',
+  },
+];
+
+const projects = [
+  {
+    title: 'Project Title',
+    description:
+      'Project description Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt porro dolores sapiente nulla dignissimos? Placeat eius quibusdam inventore vero nihil nisi ducimus aliast.',
+    liveLink: 'https://github.com/FacuReartes',
+    githubLink: 'https://github.com/FacuReartes',
+    imgSrc: '/project.png',
+  },
 ];
 
 export default function Home() {
@@ -31,22 +49,27 @@ export default function Home() {
           About
         </Typography>
         <Typography sx={{ pb: 1 }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vel
-          eum cumque perferendis quasi pariatur repellat, quis mollitia!
-          Veritatis incidunt, totam asperiores facere similique ipsam? Vitae
-          eaque sint dolorem magnam! Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Aliquam vel eum cumque perferendis quasi pariatur
-          repellat, quis mollitia! Veritatis incidunt, totam asperiores facere
-          similique ipsam? Vitae eaque sint dolorem magnam!
+          I am a{' '}
+          <Typography component="span" sx={{ color: 'primary.main' }}>
+            Software Systems Engineering
+          </Typography>{' '}
+          student with a deep passion for coding and IT as a whole 👨‍💻. I love
+          taking on challenges that help me grow and improve, both personally
+          and professionally. While I am currently focused on{' '}
+          <Typography component="span" sx={{ color: 'primary.main' }}>
+            Front-End Development
+          </Typography>
+          , I remain curious and open to learn the most I can so who knows what
+          exciting opportunities the future might hold!
         </Typography>
         <Typography>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vel
-          eum cumque perferendis quasi pariatur repellat, quis mollitia!
-          Veritatis incidunt, totam asperiores facere similique ipsam? Vitae
-          eaque sint dolorem magnam! Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Aliquam vel eum cumque perferendis quasi pariatur
-          repellat, quis mollitia! Veritatis incidunt, totam asperiores facere
-          similique ipsam? Vitae eaque sint dolorem magnam!
+          Besides development, I like doing physical activities, mainly going to
+          the gym 💪 or playing football ⚽. I also enjoy music 🎧, gaming 🎮
+          and horror movies 🎞️👻. And of course, I'm always{' '}
+          <Typography component="span" sx={{ color: 'primary.main' }}>
+            drinking mate
+          </Typography>{' '}
+          🧉.
         </Typography>
         <Typography
           variant="h4"
@@ -76,8 +99,20 @@ export default function Home() {
         >
           Projects
         </Typography>
-        <Project />
-        <Project />
+        <Project
+          title={projects[0].title}
+          description={projects[0].description}
+          imgSrc={projects[0].imgSrc}
+          githubLink={projects[0].githubLink}
+          liveLink={projects[0].liveLink}
+        />
+        <Project
+          title={projects[0].title}
+          description={projects[0].description}
+          imgSrc={projects[0].imgSrc}
+          githubLink={projects[0].githubLink}
+          liveLink={projects[0].liveLink}
+        />
         <Typography
           variant="h4"
           component="h3"
@@ -87,10 +122,10 @@ export default function Home() {
           Education
         </Typography>
         <Experience
-          title={experiences[0].title}
-          description={experiences[0].description}
-          date={experiences[0].date}
-          workplace={experiences[0].workplace}
+          title={experiences[1].title}
+          description={experiences[1].description}
+          date={experiences[1].date}
+          workplace={experiences[1].workplace}
         />
       </Box>
     </Box>

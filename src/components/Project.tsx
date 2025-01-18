@@ -1,5 +1,13 @@
 import { ArrowOutward, GitHub, Visibility } from '@mui/icons-material';
-import { Box, Button, Icon, IconButton, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Icon,
+  IconButton,
+  List,
+  ListItem,
+  Typography,
+} from '@mui/material';
 import Image from 'next/image';
 import React, { FC } from 'react';
 
@@ -9,14 +17,32 @@ interface IProject {
   liveLink: string;
   githubLink: string;
   imgSrc: string;
+  tools: string[];
 }
 
 const Project: FC<IProject> = (props) => {
+  const renderTools = props.tools.map((tool: string, index: number) => (
+    <ListItem
+      key={index}
+      sx={{
+        bgcolor: 'primary.main',
+        borderRadius: '10px',
+        px: 1,
+        py: 0.5,
+        color: 'common.white',
+        width: 'unset',
+      }}
+    >
+      {tool}
+    </ListItem>
+  ));
+
   return (
     <Box sx={{ display: 'flex', gap: 4, pb: 4 }}>
       <Button
         sx={{
           p: 0,
+          mt: 1,
           lineHeight: 'unset',
           flexShrink: 0,
           width: '250px',
@@ -114,7 +140,8 @@ const Project: FC<IProject> = (props) => {
             </IconButton>
           </Box>
         </Box>
-        <Typography>{props.description}</Typography>
+        <Typography sx={{ pb: 1 }}>{props.description}</Typography>
+        <List sx={{ display: 'flex', gap: 1, p: 0 }}>{renderTools}</List>
       </Box>
     </Box>
   );

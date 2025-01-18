@@ -22,12 +22,14 @@ const experiences = [
 
 const projects = [
   {
-    title: 'Project Title',
+    title: 'Solvd.Laba Shoe Shop',
     description:
-      'Project description Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt porro dolores sapiente nulla dignissimos? Placeat eius quibusdam inventore vero nihil nisi ducimus aliast.',
-    liveLink: 'https://github.com/FacuReartes',
-    githubLink: 'https://github.com/FacuReartes',
-    imgSrc: '/project.png',
+      'Footwear store developed as a final project of the Solvd.Laba frontend course, worked on in a collaborative team environment where I had the role of team lead.',
+    liveLink: 'https://react-laba-final-project-team-2.vercel.app/',
+    githubLink:
+      'https://github.com/FacuReartes/react-laba-final-project-team-2',
+    imgSrc: '/solvd.laba-shoe-shop.png',
+    tools: ['NextJS', 'React Query', 'Typescript', 'MUI', 'NextAuth'],
   },
 ];
 
@@ -105,13 +107,7 @@ export default function Home() {
           imgSrc={projects[0].imgSrc}
           githubLink={projects[0].githubLink}
           liveLink={projects[0].liveLink}
-        />
-        <Project
-          title={projects[0].title}
-          description={projects[0].description}
-          imgSrc={projects[0].imgSrc}
-          githubLink={projects[0].githubLink}
-          liveLink={projects[0].liveLink}
+          tools={projects[0].tools}
         />
         <Typography
           variant="h4"

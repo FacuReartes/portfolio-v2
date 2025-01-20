@@ -10,8 +10,8 @@ interface IEducation {
 
 const Education: FC<IEducation> = (props) => {
   return (
-    <Box sx={{ display: 'flex', gap: 4, pb: 4 }}>
-      <Box sx={{ width: '600px' }}>
+    <Box sx={{ display: 'flex', gap: { xs: 1, lg: 4 }, pb: 4 }}>
+      <Box sx={{ width: { xs: 'auto', sm: '520px', lg: '570px' } }}>
         <Typography variant="h5" component="h4">
           <Typography
             component="span"
@@ -25,9 +25,14 @@ const Education: FC<IEducation> = (props) => {
             {props.university}
           </Typography>
         </Typography>
+        <Typography sx={{ display: { xs: 'block', sm: 'none' } }}>
+          {props.date}
+        </Typography>
         <Typography>{props.description}</Typography>
       </Box>
-      <Typography>{props.date}</Typography>
+      <Typography sx={{ display: { xs: 'none', sm: 'block' } }}>
+        {props.date}
+      </Typography>
     </Box>
   );
 };

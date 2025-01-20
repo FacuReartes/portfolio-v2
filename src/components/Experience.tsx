@@ -25,7 +25,9 @@ const Experience: FC<IExperience> = (props) => {
         },
       }}
     >
-      <TimelineOppositeContent>{props.date}</TimelineOppositeContent>
+      <TimelineOppositeContent sx={{ display: { xs: 'none', sm: 'block' } }}>
+        {props.date}
+      </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineDot />
         <TimelineConnector />
@@ -43,6 +45,9 @@ const Experience: FC<IExperience> = (props) => {
           <Typography component="span" variant="h5">
             {props.workplace}
           </Typography>
+        </Typography>
+        <Typography sx={{ display: { xs: 'block', sm: 'none' } }}>
+          {props.date}
         </Typography>
         <Typography>{props.description}</Typography>
       </TimelineContent>

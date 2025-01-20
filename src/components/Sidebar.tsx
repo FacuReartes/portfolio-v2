@@ -22,33 +22,50 @@ const Sidebar = () => {
   return (
     <Box
       sx={{
-        width: '330px',
-        height: '85vh',
-        position: 'sticky',
+        width: { xs: '100%', sm: '600px', md: '750px', lg: '300px' },
+        height: { xs: 'unset', lg: '85vh' },
+        position: { xs: 'static', lg: 'sticky' },
         top: 56,
         pt: 4,
-        px: '30px',
+        px: 2,
+        alignSelf: { xs: 'center', lg: 'unset' },
       }}
     >
-      <Typography variant="h4" component="h1" sx={{ pb: 1 }}>
+      <Typography
+        variant="h4"
+        component="h1"
+        sx={{ pb: 1, textAlign: { xs: 'center', lg: 'unset' } }}
+      >
         Reartes Facundo
       </Typography>
-      <Typography variant="h5" component="h2" sx={{ px: 2 }}>
+      <Typography
+        variant="h5"
+        component="h2"
+        sx={{ px: 2, textAlign: { xs: 'center', lg: 'unset' } }}
+      >
         IT Engineer Student
       </Typography>
-      <Typography variant="h5" component="h2" sx={{ px: 2 }}>
+      <Typography
+        variant="h5"
+        component="h2"
+        sx={{ px: 2, textAlign: { xs: 'center', lg: 'unset' } }}
+      >
         Front End Developer
       </Typography>
       <Divider sx={{ borderColor: 'common.white', pt: 2 }} />
-      <List>
-        <ListItemButton href="#about" sx={{ fontWeight: 'bold' }}>
-          About
-        </ListItemButton>
+      <List sx={{ display: { xs: 'none', lg: 'block' } }}>
+        <ListItemButton href="#about">About</ListItemButton>
         <ListItemButton href="#experience">Experience</ListItemButton>
         <ListItemButton href="#projects">Projects</ListItemButton>
         <ListItemButton href="#education">Education</ListItemButton>
       </List>
-      <Divider sx={{ borderColor: 'common.white', pt: 1 }} />
+      <Divider
+        sx={{
+          borderColor: 'common.white',
+          pt: 1,
+          display: { xs: 'none', lg: 'block' },
+        }}
+      />
       <List>
         <ListItem>
           <ListItemIcon
@@ -67,9 +84,17 @@ const Sidebar = () => {
           <ListItemText>facureartes9@gmail.com</ListItemText>
         </ListItem>
       </List>
+      <Divider
+        sx={{
+          borderColor: 'common.white',
+          pt: 1,
+          mb: 1,
+          display: { xs: 'block', lg: 'none' },
+        }}
+      />
       <List
         sx={{
-          position: 'absolute',
+          position: { xs: 'static', lg: 'absolute' },
           bottom: 8,
           width: 'auto',
           left: 0,

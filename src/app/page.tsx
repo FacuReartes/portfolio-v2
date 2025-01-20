@@ -12,14 +12,22 @@ export default function Home() {
       sx={{
         display: 'flex',
         justifyContent: 'center',
-        gap: 10,
+        flexDirection: { xs: 'column', lg: 'row' },
+        gap: { xs: 2, xl: 14 },
         py: 7,
         bgcolor: 'secondary.main',
         color: 'common.white',
       }}
     >
       <Sidebar />
-      <Box sx={{ width: '900px', px: '40px', pt: 4 }}>
+      <Box
+        sx={{
+          width: { xs: 'auto', sm: '550px', md: '750px', lg: '900px' },
+          pt: 4,
+          px: { xs: 2, md: 10 },
+          alignSelf: { xs: 'center', lg: 'unset' },
+        }}
+      >
         <Typography variant="h4" component="h3" sx={{ pb: 2 }} id="about">
           About
         </Typography>
@@ -57,7 +65,7 @@ export default function Home() {
         <Timeline
           sx={{
             [`& .${timelineOppositeContentClasses.root}`]: {
-              flex: 0.23,
+              flex: { xs: 0.2, md: 0.36, lg: 0.26 },
             },
             p: 0,
           }}

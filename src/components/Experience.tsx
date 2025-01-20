@@ -1,17 +1,36 @@
-import { Box, Typography } from '@mui/material';
+import {
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineItem,
+  TimelineOppositeContent,
+  TimelineSeparator,
+} from '@mui/lab';
+import { List, ListItem, Typography } from '@mui/material';
 import React, { FC } from 'react';
 
 interface IExperience {
   title: string;
-  workplace: string;
   description: string;
   date: string;
+  workplace: string;
 }
 
 const Experience: FC<IExperience> = (props) => {
   return (
-    <Box sx={{ display: 'flex', gap: 4, pb: 4 }}>
-      <Box sx={{ width: '600px' }}>
+    <TimelineItem
+      sx={{
+        ':before': {
+          content: 'none',
+        },
+      }}
+    >
+      <TimelineOppositeContent>{props.date}</TimelineOppositeContent>
+      <TimelineSeparator>
+        <TimelineDot />
+        <TimelineConnector />
+      </TimelineSeparator>
+      <TimelineContent>
         <Typography variant="h5" component="h4">
           <Typography
             component="span"
@@ -21,17 +40,13 @@ const Experience: FC<IExperience> = (props) => {
             {props.title}
           </Typography>
           {', '}
-          <Typography
-            component="span"
-            variant="h5"
-          >
+          <Typography component="span" variant="h5">
             {props.workplace}
           </Typography>
         </Typography>
         <Typography>{props.description}</Typography>
-      </Box>
-      <Typography>{props.date}</Typography>
-    </Box>
+      </TimelineContent>
+    </TimelineItem>
   );
 };
 

@@ -1,37 +1,10 @@
+import Education from '@/components/Education';
 import Experience from '@/components/Experience';
 import Project from '@/components/Project';
 import Sidebar from '@/components/Sidebar';
+import { educations, experiences, projects } from '@/data/data';
+import { Timeline, timelineOppositeContentClasses } from '@mui/lab';
 import { Box, Typography } from '@mui/material';
-
-const experiences = [
-  {
-    title: 'Software developer',
-    workplace: 'Workplace',
-    description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptates quia officia adipisci facere aperiam illo ea libero cum obcaecati consectetur vel iure amet dolorem modi, harum saepe perferendis expedita!',
-    date: '24 Jan - Present',
-  },
-  {
-    title: 'Ingeniería en Sistemas de Información',
-    workplace: 'UTN',
-    description:
-      'Currently pursuing a degree in Software Systems Engineering in Universidad Tecnológica Nacional at Córdoba, Argentina. Where I deepen my understanding in software development, refine my problem-solving skills and learn engineering principles',
-    date: 'Apr 2021 - Present',
-  },
-];
-
-const projects = [
-  {
-    title: 'Solvd.Laba Shoe Shop',
-    description:
-      'Footwear store developed as a final project of the Solvd.Laba frontend course, worked on in a collaborative team environment where I had the role of team lead.',
-    liveLink: 'https://react-laba-final-project-team-2.vercel.app/',
-    githubLink:
-      'https://github.com/FacuReartes/react-laba-final-project-team-2',
-    imgSrc: '/solvd.laba-shoe-shop.png',
-    tools: ['NextJS', 'React Query', 'Typescript', 'MUI', 'NextAuth'],
-  },
-];
 
 export default function Home() {
   return (
@@ -47,7 +20,7 @@ export default function Home() {
     >
       <Sidebar />
       <Box sx={{ width: '900px', px: '40px', pt: 4 }}>
-        <Typography variant="h4" component="h3" sx={{ pb: 1 }} id="about">
+        <Typography variant="h4" component="h3" sx={{ pb: 2 }} id="about">
           About
         </Typography>
         <Typography sx={{ pb: 1 }}>
@@ -81,22 +54,31 @@ export default function Home() {
         >
           Experience
         </Typography>
-        <Experience
-          title={experiences[0].title}
-          description={experiences[0].description}
-          date={experiences[0].date}
-          workplace={experiences[0].workplace}
-        />
-        <Experience
-          title={experiences[0].title}
-          description={experiences[0].description}
-          date={experiences[0].date}
-          workplace={experiences[0].workplace}
-        />
+        <Timeline
+          sx={{
+            [`& .${timelineOppositeContentClasses.root}`]: {
+              flex: 0.23,
+            },
+            p: 0,
+          }}
+        >
+          <Experience
+            title={experiences[0].title}
+            description={experiences[0].description}
+            date={experiences[0].date}
+            workplace={experiences[0].workplace}
+          />
+          <Experience
+            title={experiences[1].title}
+            description={experiences[1].description}
+            date={experiences[1].date}
+            workplace={experiences[1].workplace}
+          />
+        </Timeline>
         <Typography
           variant="h4"
           component="h3"
-          sx={{ pb: 2, pt: 2 }}
+          sx={{ pb: 2, pt: 6 }}
           id="projects"
         >
           Projects
@@ -112,16 +94,16 @@ export default function Home() {
         <Typography
           variant="h4"
           component="h3"
-          sx={{ pb: 1, pt: 2 }}
+          sx={{ pb: 2, pt: 2 }}
           id="education"
         >
           Education
         </Typography>
-        <Experience
-          title={experiences[1].title}
-          description={experiences[1].description}
-          date={experiences[1].date}
-          workplace={experiences[1].workplace}
+        <Education
+          title={educations[0].title}
+          description={educations[0].description}
+          date={educations[0].date}
+          university={educations[0].university}
         />
       </Box>
     </Box>

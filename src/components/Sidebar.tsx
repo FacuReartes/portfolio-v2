@@ -41,10 +41,7 @@ const Sidebar = () => {
       </Typography>
       <Divider sx={{ borderColor: 'common.white', pt: 2 }} />
       <List>
-        <ListItemButton
-          href="#about"
-          sx={{ color: 'primary.main', fontWeight: 'bold' }}
-        >
+        <ListItemButton href="#about" sx={{ fontWeight: 'bold' }}>
           About
         </ListItemButton>
         <ListItemButton href="#experience">Experience</ListItemButton>
@@ -128,6 +125,7 @@ const Sidebar = () => {
             transition: 'all 0.2s linear',
             flexGrow: 0,
           }}
+          href="mailto:facureartes9@gmail.com"
         >
           <Email sx={{ fontSize: 30 }} />
         </ListItemButton>
